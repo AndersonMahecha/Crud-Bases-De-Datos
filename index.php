@@ -7,7 +7,7 @@ session_start();
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
 	<body>
-	<?php include "proveedores/navbar.php"; ?>
+	<?php include "navbar.php"; ?>
 	<div class="container">
 	<div class="row">
 	<div class="col-md-12">

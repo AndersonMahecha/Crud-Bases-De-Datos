@@ -31,32 +31,18 @@
         <div class="modal-body">
 <form role="form" method="post" id="agregar">
   <div class="form-group">
-    <label for="name">Nit</label>
-    <input type="text" class="form-control" name="nit" required>
+    <label for="name">Id</label>
+    <input type="text" class="form-control" name="id" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Nombre</label>
-    <input type="text" class="form-control" name="nombre" required>
+    <label for="lastname">Descripcion</label>
+    <input type="text" class="form-control" name="descripcion" required>
   </div>
   <div class="form-group">
-    <label for="address">Direccion</label>
-    <input type="text" class="form-control" name="direccion" required>
+    <label for="address">Cuenta</label>
+    <input type="text" class="form-control" name="cuenta" required>
   </div>
-  <div class="form-group">
-    <label for="text">Ciudad</label>
-    <input type="text" class="form-control" name="ciudad" >
-  </div>
-  <div class="form-group">
-    <label for="phone">Telefono</label>
-    <input type="text" class="form-control" name="telefono" >
-  </div>
-
-  <div class="form-group">
-    <label for="text">Tipo</label>
-    <input type="text" class="form-control" name="tipo" >
-  </div>
-
-  <button type="submit" class="btn btn-default">Agregar</button>
+   <button type="submit" class="btn btn-default">Agregar</button>
 </form>
         </div>
 
@@ -77,7 +63,7 @@
 function loadTabla(){
   $('#editModal').modal('hide');
 
-  $.get("./proveedores/tabla.php","",function(data){
+  $.get("./centrocosto/tabla.php","",function(data){
     $("#tabla").html(data);
   })
 
@@ -85,7 +71,7 @@ function loadTabla(){
 
 $("#buscar").submit(function(e){
   e.preventDefault();
-  $.get("./proveedores/busqueda.php",$("#buscar").serialize(),function(data){
+  $.get("./centrocosto/busqueda.php",$("#buscar").serialize(),function(data){
     $("#tabla").html(data);
   $("#buscar")[0].reset();
   });
@@ -96,7 +82,7 @@ loadTabla();
 
   $("#agregar").submit(function(e){
     e.preventDefault();
-    $.post("./proveedores/agregar.php",$("#agregar").serialize(),function(data){
+    $.post("./centrocosto/agregar.php",$("#agregar").serialize(),function(data){
     });
     //alert("Agregado exitosamente!");
     $("#agregar")[0].reset();

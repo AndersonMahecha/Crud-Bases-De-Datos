@@ -14,7 +14,9 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li><a href="./proveedores.php">Proveedores</a></li>
+      <li><a href="proveedores.php">Proveedores</a></li>
+      <li><a href="centrocosto.php">Centro Costo</a></li>
+      <li><a href="productos.php">Productos</a></li>
     </ul>
 
   </div><!-- /.navbar-collapse -->
