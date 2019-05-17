@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 		<title>.: CRUD :.</title>
@@ -71,6 +70,7 @@
 </div>
 </div>
 </div>
+
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script>
 

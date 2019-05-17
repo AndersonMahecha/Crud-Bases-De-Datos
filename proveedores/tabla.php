@@ -1,6 +1,6 @@
 <?php
 
-include "conexion.php";
+include "../conexion.php";
 
 $sql1= "select * from proovedores";
 $queryi = $con->query($sql1);

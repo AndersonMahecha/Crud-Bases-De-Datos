@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 
 $user_id=null;
 $sql1= "select * from proovedores where nit = ".$_GET["nit"];

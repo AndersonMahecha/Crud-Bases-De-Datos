@@ -1,7 +1,7 @@
 <?php
 
 if(!empty($_GET)){
-			include "conexion.php";
+			include "../conexion.php";
 			
 			$sql = "DELETE FROM proovedores WHERE nit=".$_GET["nit"];
 			$query = $con->query($sql);

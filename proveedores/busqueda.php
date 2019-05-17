@@ -1,6 +1,6 @@
 <?php
 
-include "conexion.php";
+include "../conexion.php";
 
 $user_id=null;
 $sql1= "select * from proovedores where nombre like '%$_GET[s]%' or nit like '%$_GET[s]%' or telefono like '%$_GET[s]%' ";
