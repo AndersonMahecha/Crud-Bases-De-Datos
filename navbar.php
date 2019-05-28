@@ -33,6 +33,8 @@
           <li><a class="level3" href="proveedores.php">Proveedores</a></li>
           <li><a class="level3" href="centrocosto.php">Centro Costo</a></li>
           <li><a class="level3" href="productos.php">Productos</a></li>
+          <li><a href="comprobante.php">Comprobante</a></li>
+          <li><a href="movimientos.php">Movimientos</a></li>
           <?php
         }
        ?>
