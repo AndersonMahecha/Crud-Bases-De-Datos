@@ -54,7 +54,11 @@
 
   <div class="form-group">
     <label for="text">Tipo</label>
-    <input type="text" class="form-control" name="tipo" >
+
+    <select id="selec"  name="tipo">
+        <option value="Extranjero">Extranjero</option>
+        <option value="Local">Local</option>
+    </select><br>
   </div>
 
   <button type="submit" class="btn btn-default">Agregar</button>

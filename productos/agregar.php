@@ -6,7 +6,6 @@ if(!empty($_POST)){
 			include "../conexion.php";
 			
 			$sql = "INSERT INTO `productos`(`id`, `descripcion`, `linea`, `precio`) VALUES (\"$_POST[id]\",\"$_POST[descripcion]\",\"$_POST[linea]\",\"$_POST[precio]\")";
-			echo "EHEH";
 			$query = $con->query($sql);
 			if($query!=null){
 				print "<script>alert(\"Agregado exitosamente.\");window.location='../proveedores.php';</script>";
@@ -17,7 +16,7 @@ if(!empty($_POST)){
 		}
 	}
 	else{
-		echo "EEEE";
+		
 	}
 }
 
