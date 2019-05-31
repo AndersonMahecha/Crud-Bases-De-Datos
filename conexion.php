@@ -20,7 +20,7 @@ $con = new mysqli($host,$user,$password,$db);
 		$consulta="create table if not exists centroCosto(id_CC int, primary key(id_CC),descripcion varchar(50), cuenta int)";
 		$con->query($consulta);
 		$consulta="CREATE TABLE IF NOT EXISTS `conex`.`movimientos` (
-		  `ordenCompra` INT NOT NULL,
+		  `ordenCompra` INT NOT NULL AUTO_INCREMENT,
 		  `cedula` INT NULL,
 		  `nitProvedor` INT NULL,
 		  `fecha` DATE NULL,

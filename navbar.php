@@ -38,6 +38,16 @@
           <?php
         }
        ?>
+
+        <?php 
+          if(isset($nivel)) 
+          if ($nivel>=1) {
+            ?>
+            <li><a href='consultas.php'>Consultas</a></li>
+            <?php
+          }
+         ?>
+
           <?php 
         if(isset($nivel)) 
         if($nivel>=1){

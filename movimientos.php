@@ -1,9 +1,8 @@
-
+<?php include "conexion.php"; ?>
 
 <html>
   <head>
     <title>.: CRUD :.</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <script src="js/jquery.min.js"></script>
   </head>
   <body>
@@ -32,37 +31,94 @@
         </div>
         <div class="modal-body">
 <form role="form" method="post" id="agregar">
-  <div class="form-group">
-    <label for="name">Orden Compra</label>
-    <input type="text" class="form-control" name="ordenCompra" required>
+   <div class="form-group">
+    <label for="Centro costo">Centro costo</label>
+    <select name="cedula" >
+    <?php 
+        $quer = $con->query("SELECT id_CC, descripcion FROM centrocosto WHERE 1");
+          if($quer->num_rows>0){
+           while ($r=$quer->fetch_array()){
+
+
+            echo "<option value=".$r['id_CC'].">".$r['descripcion']."</option>";
+           }
+        }
+     ?>
+      
+    </select>
   </div>
   <div class="form-group">
-    <label for="lastname">Cedula</label>
-    <input type="text" class="form-control" name="cedula" required>
+    <label for="nitProvedor">Nit Proovedor</label>
+    <select name="nitProvedor" >
+    <?php 
+        $quer = $con->query("SELECT `nit`, `nombre` FROM `proovedores` WHERE 1");
+          if($quer->num_rows>0){
+           while ($r=$quer->fetch_array()){
+
+
+            echo "<option value=".$r['nit'].">".$r['nombre']."</option>";
+           }
+        }
+     ?>
+      
+    </select>
   </div>
   <div class="form-group">
-    <label for="address">Nit Proovedor</label>
-    <input type="text" class="form-control" name="nitProvedor" required>
+    <label for="date">Fecha</label>
+    <input type="date" class="form-control" name="fecha" required>
   </div>
   <div class="form-group">
-    <label for="address">Fecha</label>
-    <input type="text" class="form-control" name="fecha" required>
+    <label for="Producto">Producto</label>
+    <select name="productoOC" id="combo">
+    <?php 
+        $quer = $con->query("SELECT `id`, `descripcion`, `precio` FROM `productos` WHERE 1");
+          if($quer->num_rows>0){
+           while ($r=$quer->fetch_array()){
+
+
+            echo "<option value=".$r['id'].">".$r['descripcion']."</option>";
+            ?>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script type="text/javascript">
+              $( "#combo" ).change(function() {
+                $("#prec").text(<?php echo $r['precio']; ?>);
+              });
+            </script>
+            <?php
+
+           }
+        }
+     ?>
+      
+    </select>
   </div>
   <div class="form-group">
-    <label for="text">Producto</label>
-    <input type="text" class="form-control" name="productoOC" >
+    <label for="">Valor</label>
+    <input id="prec" type="number" class="form-control" name="valorOC" value="" required>
   </div>
   <div class="form-group">
-    <label for="address">Valor</label>
-    <input type="text" class="form-control" name="valorOC" required>
+    <label for="">Forma de pago</label>
+    <select name="Fpago">
+      <option value="efectivo">Efectivo</option>
+      <option value="debito">Debito</option>
+      <option value="credito">Credito</option>
+    </select>
   </div>
   <div class="form-group">
-    <label for="address">Forma de pago</label>
-    <input type="text" class="form-control" name="Fpago" required>
-  </div>
-  <div class="form-group">
-    <label for="address">Comprobante</label>
-    <input type="text" class="form-control" name="comprobanteOC" required>
+    <label for="">Comprobante</label>
+    <select name="comprobanteOC" >
+    <?php 
+        $quer = $con->query("SELECT `idCom`, `descripcion` FROM `comprobante` WHERE 1");
+          if($quer->num_rows>0){
+           while ($r=$quer->fetch_array()){
+
+
+            echo "<option value=".$r['idCom'].">".$r['descripcion']."</option>";
+           }
+        }
+     ?>
+      
+    </select>
   </div>
 
   <button type="submit" class="btn btn-default">Agregar</button>
@@ -106,7 +162,6 @@ loadTabla();
     e.preventDefault();
     $.post("./movimientos/agregar.php",$("#agregar").serialize(),function(data){
     });
-    //alert("Agregado exitosamente!");
     $("#agregar")[0].reset();
     $('#newModal').modal('hide');
     loadTabla();

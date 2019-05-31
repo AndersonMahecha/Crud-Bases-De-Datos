@@ -50,7 +50,7 @@
 
 	if (mysqli_query($con, $query)) {
 		echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";		
+		<a class='btn btn-outline-primary' href='index.php' role='button'>Login</a></div>";		
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($con);
 		}	

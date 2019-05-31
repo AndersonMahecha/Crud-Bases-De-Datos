@@ -27,7 +27,7 @@ while ($r=$query->fetch_object()){
   </div>
   <div class="form-group">
     <label for="precio">Precio</label>
-    <input type="text" class="form-control" value="<?php echo $person->precio; ?>" name="precio" >
+    <input type="number" class="form-control" value="<?php echo $person->precio; ?>" name="precio" >
   </div>
   
 <input type="hidden" name="id" value="<?php echo $person->id; ?>">

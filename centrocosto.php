@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>.: CRUD :.</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
@@ -32,7 +31,7 @@
 <form role="form" method="post" id="agregar">
   <div class="form-group">
     <label for="name">Id</label>
-    <input type="text" class="form-control" name="id" required>
+    <input type="number" class="form-control" name="id" required>
   </div>
   <div class="form-group">
     <label for="lastname">Descripcion</label>
